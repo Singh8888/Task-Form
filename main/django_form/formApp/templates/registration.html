@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Ecom</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+    <script type="text/javascript">
+        function checkPasswordMatch() {
+            var password = document.getElementById("form3Example99").value;
+            var confirmPassword = document.getElementById("form3Example97").value;
+            var passwordMismatch = document.getElementById("passwordMismatch");
+        
+            if (password === confirmPassword) {
+                passwordMismatch.style.display = "none"; 
+            } else {
+                passwordMismatch.style.display = "block"; 
+            }
+        }
+    </script>
+    <style>
+      
+    </style>
+</head>
+<body>
+ 
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+
+             <div class="col-xl-6 d-none d-xl-block image-container">
+                <img src="{% static 'images/pxfuel.jpg' %}"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              <a class="airplane-icon" href=""><img src="{% static 'images/animations_546888.svg' %}"/></a>
+
+                  <div class="text-overlay">
+                    <h1>Altitude Air</h1>
+                 
+                    <p>we promise to ensure that your well being is taken care of while travelling with us. Boasting top in class fleet 
+                      inventory and a 5 star approval for our in-flight experience, you know you are getting the best from Altitude with no attitude.
+                    </p>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <a href={% url 'loginForm' %}><button type="button" class="btn btn-primary">SIGN IN</button></a>
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 head">Explore & Experience</h3>
+                  <p class="para">Get onto your most comfortable journey yet.All the way up.</p>
+                  <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <input type="text" class="form-control form-control-lg" placeholder="First Name" id="first_name" name="first_name" required/>
+                            </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <input type="text"  class="form-control form-control-lg" placeholder="Last Name" id="last_name" name="last_name" required/>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="email"  class="form-control form-control-lg" placeholder="Email" id="email" name="email" required/>
+                            {% if message %}<p style="color:red">Email is already exists</p>{% endif %}
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="password"  class="form-control form-control-lg" placeholder="Password"  id="password" name="password" required/>
+                        </div>
+        
+                        <div class="form-outline mb-4">
+                            <input type="password"  class="form-control form-control-lg" placeholder="Confirm Password"  id="Repeat_your_password" name="Repeat_your_password" oninput="checkPasswordMatch()" required/>
+                            <p id="passwordMismatch" style="display: none; color: red;">Password and confirm password are not the same</p>
+                        </div>
+        
+                        <div class="d-flex justify-content-end pt-3">
+                            <button type="submit" class="btn btn-warning btn-lg ms-2" id = "register" name="register">GET STARTED</button>
+                        </div>
+                    </form> 
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="{% static 'js/registration.js' %}"></script>
+  <script src="{% static 'js/token.js' %}"></script>
+
+</body>
+</html> 
+

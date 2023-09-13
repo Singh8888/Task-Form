@@ -1,0 +1,95 @@
+body{
+    background-size: contain;
+}
+.head{
+    color:rgb(118,84,248);
+    font-size:2.50rem
+}
+.para {
+    color: rgb(118, 84, 248);
+    font-weight: bold;
+    margin-top: -44px;
+    font-size: 15px;
+    margin-bottom:31px;
+
+}
+
+.btn-warning{
+    width:100%;
+    background-color: rgb(63,39,215);
+    color:white;
+    border-color:rgb(63,39,215);
+}
+
+.btn-primary{
+    color:rgb(63,39,215);
+    background-color: #fff;
+    border:2px solid rgb(63,39,215);
+    margin-left:72%;
+    margin-top:7%;
+    font-weight:bold;
+    font-size:12px;
+    width:20%;
+
+}
+
+input::placeholder{
+    font-size:15px;
+}
+
+.card-body{
+    padding:1rem!important;
+    margin-top:5rem;
+}
+
+/* styles.css */
+.image-container {
+    position: relative;
+    display: inline-block;
+    
+}
+
+img {
+    max-width: 88%;
+    height: 98%!important;
+    margin-left: 3%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 86%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 5px; 
+    color: #fff; 
+    padding-left:5rem;
+    padding-right:5rem;
+    padding-top:4rem;
+    padding-bottom:4rem;
+    width:80%;
+    text-align:center;
+    
+}
+
+p {
+    margin: 0;
+    font-size: 12px; 
+}
+
+.btn-warning:hover{
+    background-color: rgb(63,39,215);   
+    color:#fff
+}
+
+.airplane-icon {
+    position: absolute;
+    top: 7%; 
+    left: 17%;
+    transform: translate(-50%, -50%);
+    width: 40px; 
+    height: 40px;
+    background-image: url('airplane-icon.png'); 
+    background-size: cover;
+    cursor: pointer; 
+}
